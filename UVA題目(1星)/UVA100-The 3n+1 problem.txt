@@ -1,4 +1,3 @@
-```C++
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -21,4 +20,4 @@ if(ans>max) max=ans;
 cout<<max<<endl;
 }
 }
-```
+
