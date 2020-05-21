@@ -1,0 +1,27 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int prime(int p){
+for(int i=2;i*i<=p;i++)
+if(p%i==0)return 0;
+return 1;
+}
+int t[10000];
+int main(){
+int a,b;
+while(cin>>a>>b){
+int p,num=0;
+for(int i=a;i<=b;i++){
+if(t[i]==0){
+p=i*i+i+41;
+if(prime(p)){
+t[i]=1;
+num++;
+}
+else t[i]=2;
+}
+else if(t[i]==1)num++;
+}
+cout<<setprecision(2)<<fixed<<((double)num/(b-a+1)*100)+(1E-5)<<endl;
+}
+}

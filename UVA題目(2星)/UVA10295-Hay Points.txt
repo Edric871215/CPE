@@ -1,0 +1,19 @@
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+int m,n;
+cin>>m>>n;
+map<string,int>key;
+string s;
+while(m--){
+int p;
+cin>>s>>p;
+key[s]=p;
+}
+while(n--){
+int price=0;
+while(cin>>s && s!=".")price+=key[s];
+cout<<price<<endl;
+}
+}

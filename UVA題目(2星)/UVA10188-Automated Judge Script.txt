@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int main(){
+int n,m,run=1;
+string input,output,answer;
+while(cin>>n && n!=0){
+cout<<"Run #"<<run++<<": ";
+cin.ignore();
+answer="";
+output="";
+bool ac=1,pe=1;
+for(int i=0;i<n;i++){
+getline(cin,input);
+if(i)answer+='\n',answer+=input;
+else answer=input;
+}
+(cin>>m).get();
+for(int i=0;i<m;i++){
+getline(cin,input);
+if(i)output+='\n',output+=input;
+else output=input;
+}
+if(answer!=output)ac=false;
+if(ac){
+cout<<"Accepted\n";
+continue;
+}
+for(int i=0;i<answer.length();i++)
+if(!isdigit(answer[i]))answer.erase(i,1),i--;
+for(int i=0;i<output.length();i++)
+if(!isdigit(output[i]))output.erase(i,1),i--;
+if(answer!=output)pe=false;
+if(pe){
+cout<<"Presentation Error\n";
+continue;
+}
+cout<<"Wrong Answer\n";
+}
+}

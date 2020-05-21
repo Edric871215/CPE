@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main(){
+char buf[10240],tmp[10240];
+while(cin>>tmp){
+buf[0]='\0';
+strcat(buf,tmp);
+while(buf[strlen(buf)-1]!='#'){
+cin>>tmp;
+strcat(buf,tmp);
+}
+int num=0;
+for(int i=strlen(buf)-1;i>=0;i--){
+num*=2;
+if(buf[i]=='1')num++;
+num%=131071;
+}
+if(num)cout<<"NO";
+else cout<<"YES";
+cout<<endl;
+}
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+string a,b;
+while(cin>>b){
+a="";
+a=a+b;
+while(a[a.length()-1]!='#'){
+cin>>b;
+a=a+b;
+}
+int num=0;
+for(int i=a.length()-1;i>=0;i--){
+num*=2;
+if(a[i]=='1')num++;
+num%=131071;
+}
+if(num)cout<<"NO";
+else cout<<"YES";
+cout<<endl;
+}
+}

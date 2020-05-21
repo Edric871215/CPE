@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int DigitSum(int n){
+int sum=0;
+while(n){
+sum+=(n%10);
+n/=10;
+}
+return sum;
+}
+int FactorSum(int n){
+int temp=n,sum=0;
+for(int i=2;i*i<=n;i++){
+while(temp%i==0){
+temp/=i;
+sum+=DigitSum(i);
+}
+}
+if(temp!=n){
+if(temp!=1)sum+=DigitSum(temp);
+return sum;
+}
+return 0;
+}
+int main(){
+int t,n;
+cin>>t;
+while(t--){
+cin>>n;
+int ans=n+1;
+while(1){
+if(DigitSum(ans)==FactorSum(ans))break;
+else ans++;
+}
+cout<<ans<<endl;
+}
+}

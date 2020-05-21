@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int sum[1000005];
+int main(){
+int n,m,a,b;
+cin>>n;
+for(int k=0;k<n;k++){
+if(k>0)cout<<endl;
+memset(sum,0,sizeof(sum));
+cin>>m;
+for(int i=m-1;i>=0;i--){
+cin>>a>>b;
+sum[i]=a+b;
+}
+for(int i=0;i<m;i++){
+sum[i+1]+=sum[i]/10;
+sum[i]%=10;
+}
+while(m>0 && !sum[m])m--;
+while(m>=0)cout<<sum[m--];
+cout<<endl;
+}
+}

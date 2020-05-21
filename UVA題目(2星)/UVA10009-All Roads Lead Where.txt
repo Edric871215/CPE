@@ -1,0 +1,43 @@
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+int T,f=1;
+cin>>T;
+while(T--){
+if(f==1)f=0;
+else cout<<endl;
+int n,m;
+string city1,city2;
+cin>>n>>m;
+map<char,char>parent;
+for(int i=0;i<n;i++){
+cin>>city1>>city2;
+parent[city2[0]]=city1[0];
+}
+for(int q=0;q<m;q++){
+cin>>city1>>city2;
+int p1=0,p2=0;
+char route1[26],route2[26];
+route1[0]=city1[0];
+while(route1[p1]!='R'){
+route1[p1+1]=parent[route1[p1]];
+p1++;
+}
+route2[0]=city2[0];
+while(route2[p2]!='R'){
+route2[p2+1]=parent[route2[p2]];
+p2++;
+}
+while(route1[p1]==route2[p2]){
+p1--;
+p2--;
+}
+for(int i=0;i<=p1+1;i++)
+cout<<route1[i];
+for(int i=p2;i>=0;i--)
+cout<<route2[i];
+cout<<endl;
+}
+}
+}
