@@ -1,0 +1,17 @@
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+map<string,int>count;
+map<string,int>::iterator i;
+string country,name;
+int n;
+cin>>n;
+while(n--){
+cin>>country;
+count[country]++;
+getline(cin,name);
+}
+for(i=count.begin();i!=count.end();i++)
+cout<<i->first<<" "<<i->second<<endl;
+}

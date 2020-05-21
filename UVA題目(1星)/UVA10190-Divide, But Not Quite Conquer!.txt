@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+long long n,m,temp,flag;
+while(cin>>n>>m){
+flag=1;
+if(m<=1 || n<m || n%m!=0){
+cout<<"Boring!\n";
+continue;
+}
+temp=n;
+while(temp%m==0 && temp>=m){
+if(temp/m==1)flag=1;
+else flag=0;
+temp/=m;
+}
+if(!flag)cout<<"Boring!";
+else{
+cout<<n;
+while(n>=m)
+cout<<" "<<(n/=m);
+}
+cout<<endl;
+}
+}

@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+long long p,q;
+while(cin>>p>>q&&(p!=-1&&q!=-1)){
+long long sum=0;
+while(p|q){
+sum+=(p%10+q%10)*((q%10)-(p%10)+1)/2;
+sum+=(q/10-p/10)*45;
+if(p%10&&(p/10|q/10))p+=10;
+p/=10;
+q/=10;
+}
+cout<<sum<<endl;
+}
+}

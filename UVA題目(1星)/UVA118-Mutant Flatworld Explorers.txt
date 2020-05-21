@@ -1,0 +1,55 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int map[51][51]={};
+int main(){
+int x,y,w,h;
+char c[2],cmd[101];
+cin>>w>>h;
+while(cin>>x>>y>>c){
+char d=c[0];
+cin>>cmd;
+int flag=1;
+for(int i=0;i<strlen(cmd);i++){
+if(cmd[i]=='F'){
+switch(d){
+case 'N':y++;break;
+case 'S':y--;break;
+case 'E':x++;break;
+case 'W':x--;break;
+}
+}
+else if(cmd[i]=='R'){
+switch(d){
+case 'N':d='E';break;
+case 'S':d='W';break;
+case 'E':d='S';break;
+case 'W':d='N';break;
+}
+}
+else {
+switch(d){
+case 'N':d='W';break;
+case 'S':d='E';break;
+case 'E':d='N';break;
+case 'W':d='S';break;
+}
+}
+if(x<0 || y<0 || x>w || y>h){
+switch(d){
+case 'N':y--;break;
+case 'S':y++;break;
+case 'E':x--;break;
+case 'W':x++;break;
+}
+if(map[x][y]==1)continue;
+flag=0;
+map[x][y]=1;
+break;
+}
+}
+if(flag)cout<<x<<" "<<y<<" "<<d;
+else cout<<x<<" "<<y<<" "<<d<<" LOST";
+cout<<endl;
+}
+}

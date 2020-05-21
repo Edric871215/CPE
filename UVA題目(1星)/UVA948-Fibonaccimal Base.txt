@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+int f[40]={0,1};
+for(int k=2;k<40;k++)
+f[k]=f[k-2]+f[k-1];
+int n;
+cin>>n;
+while(n--){
+int m;
+cin>>m;
+cout<<m<<" = ";
+bool flag=false;
+for(int k=39;k>=2;k--){
+if(m>=f[k]){
+cout<<"1";
+m-=f[k];
+flag=true;
+}
+else if(flag)
+cout<<"0";
+}
+cout<<" (fib)"<<endl;
+}
+}

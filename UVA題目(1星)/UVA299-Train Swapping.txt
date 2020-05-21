@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+int N;
+cin>>N;
+while(N--){
+int tr[100]={};
+int ans=0,L,temp;
+cin>>L;
+for(int i=0;i<L;i++)
+cin>>tr[i];
+for(int i=0;i<L;i++){
+for(int j=0;j<i;j++){
+if(tr[j]>tr[i]){
+temp=tr[j];
+tr[j]=tr[i];
+tr[i]=temp;
+ans++;
+}
+}
+}
+cout<<"Optimal train swapping takes "<<ans<<" swaps."<<endl;
+}
+}

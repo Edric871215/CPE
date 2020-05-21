@@ -1,0 +1,23 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int n,m,data[10005];
+bool cmp(int x,int y){
+int xodd=abs(x%2);
+int yodd=abs(y%2);
+if (x%m!=y%m) return x%m<y%m;
+else if(xodd!=yodd)return xodd>yodd;
+else if(xodd)return x>y;
+else return x<y;
+}
+int main(){
+while(cin>>n>>m){
+cout<<n<<" "<<m<<endl;
+if(n==0 && m==0)break;
+for(int i=0;i<n;i++)
+cin>>data[i];
+sort(data,data+n,cmp);
+for(int i=0;i<n;i++)
+cout<<data[i]<<endl;
+}
+}

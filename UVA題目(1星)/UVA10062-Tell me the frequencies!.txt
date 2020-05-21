@@ -1,0 +1,21 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+string data;
+int set=0;
+while(getline(cin,data)){
+int count[256]={};
+if(set>0)
+cout<<endl;
+set++;
+for(int i=0;i<data.length();i++){
+count[(int)data[i]]++;
+}
+for(int j=1;j<data.length()+1;j++){
+for(int i=255;i>=0;i--){
+if(count[i]==j)cout<<i<<" "<<j<<endl;
+}
+}
+}
+}

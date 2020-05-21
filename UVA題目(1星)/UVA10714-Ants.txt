@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main(){
+int t;
+cin>>t;
+while(t--){
+int m=-100,M=-100;
+int len,n,loc;
+cin>>len>>n;
+for(int i=0;i<n;i++){
+cin>>loc;
+M=max(M,max(loc,len-loc));
+m=max(m,min(loc,len-loc));
+}
+cout<<m<<" "<<M<<endl;
+}
+}

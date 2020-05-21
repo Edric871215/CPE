@@ -1,0 +1,16 @@
+#include<iostream>
+#include<cctype>
+#include<cstring>
+using namespace std;
+int main(){
+char c;
+char kb[]="1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
+int n;
+while(cin.get(c)){
+c=tolower(c);
+for(int i=0;i<strlen(kb);i++){
+if(kb[i]==c) c=kb[i-2];
+}
+cout<<c;
+}
+}

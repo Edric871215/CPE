@@ -1,0 +1,18 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include<cmath>
+#define PI 2*acos(0.0)
+using namespace std;
+int main(){
+double s,a;
+string unit;
+double arc,chord;
+while(cin>>s>>a>>unit){
+if(unit=="min")a/=60;
+if(a>180)a=360-a;
+arc=2*PI*(s+6440)*a/360.0;
+chord=(s+6440)*sin(a*PI/2/180)*2;
+cout<<setprecision(6)<<fixed<<arc<<" "<<chord<<endl;
+}
+}

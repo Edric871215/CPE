@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+long long n,day;
+int main(){
+while(cin>>n>>day){
+while(n<day){
+day-=n;
+n++;
+}
+cout<<n<<endl;
+}
+}

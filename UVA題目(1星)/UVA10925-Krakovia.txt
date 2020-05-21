@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main(){
+int n,m,cnt=1;
+string s;
+while(cin>>n>>m&&n&&m){
+int sumv[32]={};
+while(n--){
+cin>>s;
+for(int i=0;i<s.length();i++)
+sumv[i]+=s[s.length()-1-i]-'0';
+}
+for(int i=0;i<31;i++){
+sumv[i+1]+=sumv[i]/10;
+sumv[i]%=10;
+}
+cout<<"Bill #"<<cnt++<<" costs ";
+int sum=31;
+while(sum>0 && !sumv[sum])sum--;
+while(sum>=0)cout<<sumv[sum--];
+cout<<": each friend should pay ";
+for(int i=31;i>=0;i--){
+sumv[i-1]+=sumv[i]%m*10;
+sumv[i]/=m;
+}
+sum=31;
+while(sum>0 && !sumv[sum])sum--;
+while(sum>=0)cout<<sumv[sum--];
+cout<<endl<<endl;
+}
+}

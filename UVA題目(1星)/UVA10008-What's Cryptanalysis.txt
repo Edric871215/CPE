@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+#include<cctype>
+using namespace std;
+int main(){
+string testspace,data;
+int n,count[256]={},f=0;
+char c;
+getline(cin,testspace);
+for(int i=0;i<testspace.length();i++){
+if(testspace[i]!=32)n=testspace[i]-'0';
+}
+while(n--){
+getline(cin,data);
+f+=data.length();
+for(int i=0;i<data.length();i++){
+c=toupper(data[i]);
+count[c]++;
+}
+}
+while(--f){
+for(c='A';c<='Z';c++){
+if(count[c]==f)cout<<c<<" "<<count[c]<<endl;
+}
+}
+}

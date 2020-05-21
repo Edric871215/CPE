@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main(){
+int testspace;
+cin>>testspace;
+while(testspace--){
+int n;
+cin>>n;
+int b1=0,b2=0,v;
+v=n;
+while(v){
+b1+=v%2;
+v/=2;
+}
+while(n){
+for(int v=n%10;v;v/=2)b2+=v%2;
+n/=10;
+}
+cout<<b1<<" "<<b2<<endl;
+}
+}

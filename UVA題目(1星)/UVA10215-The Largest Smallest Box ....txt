@@ -1,0 +1,12 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+int main(){
+double L,W,max,min;
+while(cin>>L>>W){
+max=((L+W)-sqrt(L*L-W*L+W*W))/6.0;
+min=(L>W)?W/2:L/2;
+cout<<setprecision(3)<<fixed<<max+(1E-6)<<" 0.000 "<<min+(1E-6)<<endl;
+}
+}

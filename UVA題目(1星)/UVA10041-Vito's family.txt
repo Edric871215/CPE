@@ -1,0 +1,18 @@
+#include<algorithm>
+#include<iostream>
+using namespace std;
+int main(){
+int testspace,n,ans,data[500]={};
+cin>>testspace;
+while(testspace--){
+cin>>n;
+ans=0;
+for(int i=0;i<n;i++){
+cin>>data[i];
+}
+sort(data,data+n);
+for(int i=0;i<n;i++)
+ans+=abs(data[i]-data[n/2]);
+cout<<ans<<endl;
+}
+}

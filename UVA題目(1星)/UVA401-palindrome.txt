@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+char mirror[]="AAE3HHIIJLLJMMOOS2TTUUVVWWXXYYZ500112S3E5Z88";
+bool ismirrored(char a,char b){
+for(int i=0;mirror[i+1];i++)
+if(mirror[i]==a && mirror[i+1]==b)return 1;
+return 0;
+}
+bool ispalindrome(char a,char b){
+return a==b;
+}
+int main(){
+char c[100];
+while(cin.getline(c,100)){
+bool palindrome=1,mirrored=1;
+for(int i=0,j=strlen(c)-1;i<=j;i++,j--){
+if(!ispalindrome(c[i],c[j]))palindrome=0;
+if(!ismirrored(c[i],c[j]))mirrored=0;
+}
+if(palindrome && mirrored)cout<<c<<" -- is a mirrored palindrome.";
+else if(palindrome)cout<<c<<" -- is a regular palindrome.";
+else if(mirrored)cout<<c<<" -- is a mirrored string.";
+else cout<<c<<" -- is not a palindrome.";
+cout<<endl<<endl;
+}
+}

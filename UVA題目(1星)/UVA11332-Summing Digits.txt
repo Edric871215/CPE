@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+int n,tmp;
+while(cin>>n && n!=0){
+while(n>=10){
+tmp=0;
+while(n){
+tmp+=n%10;
+n/=10;
+}
+n=tmp;
+}
+cout<<n<<endl;
+}
+}

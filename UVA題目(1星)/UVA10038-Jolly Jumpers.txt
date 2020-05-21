@@ -1,0 +1,18 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+int data[3001],n,i;
+while(cin>>n){
+int check[3001]={};
+for(i=0;i<n;i++)
+cin>>data[i];
+for(i=1;i<n;i++)
+check[abs(data[i-1]-data[i])]=1;
+for(i=1;i<n;i++)
+if(check[i]==0)break;
+if(i==n) cout<<"Jolly";
+else cout<<"Not jolly";
+cout<<endl;
+}
+}

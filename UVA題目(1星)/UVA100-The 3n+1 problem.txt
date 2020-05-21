@@ -1,0 +1,22 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+int a,b,n,max,ans;
+while(cin>>a>>b){
+max=0;
+cout<<a<<" "<<b<<" ";
+if(a>b)swap(a,b);
+for(int i=a;i<=b;i++){
+n=i;
+ans=1;
+while(n!=1){
+if(n%2) n=n*3+1;
+else n/=2;
+ans++;
+}
+if(ans>max) max=ans;
+}
+cout<<max<<endl;
+}
+}

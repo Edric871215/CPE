@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main(){
+char c;
+int n=0;
+while(cin.get(c)){
+if(c!='"')cout<<c;
+else if(++n%2)cout<<"``";
+else cout<<"''";
+}
+}

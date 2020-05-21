@@ -1,0 +1,17 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+int main(){
+int test,n,i;
+double p,out;
+cin>>test;
+while(test--){
+cin>>n>>p>>i;
+if(p==0) cout<<"0.0000"<<endl;
+else{
+out=pow(1-p,i-1)*p/(1-pow(1-p,n));
+cout<<setprecision(4)<<fixed<<out<<endl;
+}
+}
+}

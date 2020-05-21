@@ -1,0 +1,18 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+int main(){
+double a,x,y,z,eq1,eq2,eq3,eq4,eq5,tri;
+while(cin>>a){
+eq1=a*a;
+eq2=a*a*M_PI/4;
+eq3=a*a*M_PI/3-a*a*sqrt(3)/4;
+eq4=eq2-eq3;
+eq5=eq1-eq2;
+z=eq5-eq4;
+y=eq4-z;
+x=2*eq2-eq1-2*y;
+cout<<setprecision(3)<<fixed<<x<<" "<<4*y<<" "<<4*z<<endl;
+}
+}
